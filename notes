@@ -1,0 +1,117 @@
+
+ch.1 
+
+Introduction to basic elements of python including Numbers and Expressions, variables, statements and using input to allow functionality with user input. Also outlines functions, modules (outside programs that provide functionality) as well as saving/executing programs. Programs can be run from IDLE, or the command line or any number of IDE’s.
+
+
+Lists can be used instead of tuples in almost all situations, but not in the creation of dictionary keys. Tuples must be used for dictionary keys as dk’s can not be modified.
+ch. 2
+
+Lists vs. Tuples
+
+#Sequences useful when working with a collection of values.
+#ex. 
+
+edward = ['Edward Gumby', 42]
+
+
+List can be changed (better if elements need to be added in the future)
+Tuplescan’t be changed (no added elements in the future)
+
+sequence within sequence
+edward = ['Edward Gumby', 42]
+john = ['John Smith', 50]
+database = [edward, john]
+
+database
+[['Edward Gumby', 42]], ['John Smith', 50]]
+
+#Python has a container structure in that any object can contain other objects.
+
+#Sequence Operations
+
+#Indexing, slicing, adding, multiplying,
+#
+#Indexing
+#All elements are numbered from 0 up ie
+greeting = 'Hello'
+#
+greeting[0]
+'H'
+#0 always corresponds to the first element in a sequence (including strings)
+#
+#List
+#
+list('Hello')
+
+
+
+
+(Preface) --> Bird, S., Klein, E., & Loper, E. (2009). Natural language processing with Python. " O'Reilly Media, Inc."
+
+Ch. 00
+
+Ch. .01
+
+Ch. 2.0
+
+Ch 3
+
+Blum, R., Bresnahan, C. (2014) Sams Teach Yourself Python Programming for Raspberry Pi. Pearson Education, Inc.
+
+This book approaches teaching python while simultaneously using the Raspberry Pi, a single board low cost computer. The Raspberry Pi can be incorporated into a wide array of computer projects as well as adds a deeper understanding of the development process.
+
+ch. 01/02
+
+This book approaches teaching python while simultaneously using the Raspberry Pi, a single board low cost computer. The Raspberry Pi can be incorporated into a wide array of computer projects as well as adds a deeper understanding of the development process. The first two chapters outline setting up the Raspberry Pi as well as an introduction to the Raspbian (a Linux distribution) command line and operating system environment. 
+
+ch. 03
+
+various programs used to create python code are introducted. Simple text editors use very little resources and allow one to type long python scripts. However, they usually lack autocomplete and syntax checking. Development environment shells provide more features such as consistent indentation, syntax checking, and autocomplete. Development environments, such as IDLE also allow debugging that allow you to step through a python script to uncover logic errors.
+ch. 04
+
+Python Basics
+
+Single/double quotes can be used to protect strings that contain “ or ‘ marks that are not a part of the string definition.
+
+print is a function in python 3 and must have () ie 
+print (‘hello’)
+
+Output can be controlled for easier reading with escape sequences to make output deviate from its normal behavior. (See p. 76, table 4.1 for details). ex. adding quotes or showing Unicode character from hexidecimal via \u####
+
+How to concatenate strings
+
+>>> print ("this is a long"   									 
+		" line")
+this is a long line
+
+Variables
+
+must import keywords with 
+	import keyword
+
+To allow python input from a user:
+	
+>>> cups_consumed = input('How many cups did you drink?')
+How many cups did you drink? 3
+>>> print ('You drank', cups_consumed, 'cups!')
+You drank  3 cups!
+
+input function treats all input as strings, but you can convert the data type using the float function:
+
+>>> cups_consumed = input ("How many?")
+How many? 3
+>>> type (cups_consumed)
+<class 'str'>
+>>> cups_consumed = int(cups_consumed)
+>>> type (cups_consumed)
+<class 'int'>
+
+Us a nested function to change the int to the approrpaite data type:
+
+>>>cups_consumed = int(input("How many cups did you drink? "))
+How many cups did you drink? 3
+>>> type (cups_consumed)
+<class 'int'>
+
+
