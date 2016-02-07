@@ -1,0 +1,55 @@
+import re
+import string
+#
+
+#-----------------CREATION OF POS/NEG WORD DICTIONARIES----------------------------------------------------------------
+def clean_lexicon(lex_input):
+
+    lex_file_l = open(lex_input, "r").readlines()
+
+    new_lex_file_l=[]
+    for i in lex_file_l:
+        i = i.strip()
+        #i= i[:-1] # i is a word in the list
+        i = re.sub("_", " ", i)
+        new_lex_file_l.append(i)
+    return new_lex_file_l
+#
+my_positive_list = clean_lexicon("pos.wn")                                  #In () enter file path to the positive list
+print("Positive Word Dictionary:", my_positive_list[:10])                               #[:x] returns number of outputs
+#
+#
+my_neg_list = clean_lexicon("neg.wn")                                           #In () enter file path to negative list
+print("Negative Word Dictionary:", my_neg_list[:10])
+#
+#
+clean_text = clean_lexicon("ENG-EMOTION-SMM-LABEL.tsv")  #Input text to be analyzed here
+#
+#
+#
+#-------------------------Determine the percentage of positive words in a file:-----------------------------------------
+#
+#
+#
+
+
+def get_sentiment_diversity(my_positive_list, my_neg_negative_list, clean_text):
+    """
+    just returns some stats about % of pos and neg sentiment in a file...
+    """
+    input_string = open("ENG-EMOTION-SMM-LABEL.tsv", "r").read().lower() #Opens text file to be analyzed
+    len_words = float(len(input_string.split()))
+    pos_count = 0
+    neg_count = 0
+    for w in my_positive_list:
+        pos_count += input_string.count(w)
+    for w in my_neg_list:
+        neg_count += input_string.count(w)
+    return pos_count, neg_count, len_words
+#
+# Call the function...
+input_file = "ENG-EMOTION-SMM-LABEL.tsv"
+pos_count, neg_count, len_words = get_sentiment_diversity(my_positive_list, my_neg_list, input_file)
+print("% of positive: ", round(pos_count/len_words, 4))
+print("% of negative: ", round(neg_count/len_words, 4))
+
