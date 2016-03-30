@@ -25,7 +25,7 @@ for line in mylist:
 #print(h)
 print(s[5])
 #end
-
+#
 
 
 print("There are", len(s), "sad tweets")
